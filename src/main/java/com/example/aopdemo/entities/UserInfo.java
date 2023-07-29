@@ -15,5 +15,5 @@ public class UserInfo {
     private String username;
     private int password;
     private LocalDateTime updateTime;
-    private Long updateUser;
+
 }
