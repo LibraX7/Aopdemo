@@ -44,11 +44,11 @@ public class Aspect {
         LocalDateTime now = LocalDateTime.now();
 
         //根据当前不同的操作类型，为对应的属性通过反射来赋值
-        if(s.equals("insert")){
+        if(s.equals("Insert")){
             //为4个公共字段赋值
             try {
 
-                Method setUpdateTime = objects.getClass().getDeclaredMethod("setupdateTime");
+                Method setUpdateTime = objects.getClass().getDeclaredMethod("setUpdateTime",LocalDateTime.class);
                 //通过反射对对象属性赋值(invoke实现实施的意思)
                 setUpdateTime.invoke(objects,now);
             } catch (NoSuchMethodException e) {
